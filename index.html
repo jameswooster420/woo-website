@@ -1421,5 +1421,36 @@ Matcha Extreme is a product focused on weight loss support. It is distinguished 
 
         </script>
         
+
+
+<div class="overlay"></div>
+    <div class="form-container">
+        <button class="close-btn">&times;</button>
+        <h2>Subscribe to Our Newsletter</h2>
+        <p>Stay updated with the latest offers and health tips from Matcha Extreme.</p>
+        <form>
+            <input type="email" placeholder="Enter your email" required>
+            <div>
+                <input type="checkbox" id="marketing-consent" required>
+                <label for="marketing-consent">I agree to receive email marketing from Matcha Extreme.</label>
+            </div>
+            <button type="submit">Subscribe Now</button>
+        </form>
+    </div>
+
+    <script>
+        document.querySelector('.close-btn').addEventListener('click', function() {
+            document.querySelector('.form-container').style.display = 'none';
+            document.querySelector('.overlay').style.display = 'none';
+        });
+
+        document.querySelector('form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Thank you for subscribing!');
+            document.querySelector('.form-container').style.display = 'none';
+            document.querySelector('.overlay').style.display = 'none';
+        });
+    </script>
+
     </body>
 </html>
