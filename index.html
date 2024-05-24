@@ -33,6 +33,7 @@
             color: #DEE54E;
             margin-bottom: 20px;
             text-align: center;
+		font-size: 300%;
         }
         .form-container p {
             font-size: 14px;
@@ -65,6 +66,7 @@
             background: #c8d947;
         }
         .close-btn {
+   		 max-width: 10%;
             position: absolute;
             top: 10px;
             right: 10px;
@@ -1416,28 +1418,46 @@ Matcha Extreme is a product focused on weight loss support. It is distinguished 
     <div class="form-container">
         <button class="close-btn">&times;</button>
         <h2>Subscribe to Our Newsletter</h2>
-        <p>Stay updated with the latest offers and health tips from Matcha Extreme.</p>
+        <p>Stay updated with the latest offers and health tips from WooSupplements</p>
         <form>
             <input type="email" placeholder="Enter your email" required>
             <div>
                 <input type="checkbox" id="marketing-consent" required>
-                <label for="marketing-consent">I agree to receive email marketing from Matcha Extreme.</label>
+                <label for="marketing-consent">I agree to receive personalised marketing emails from WooSupplements. You can change your mind at any time by clicking the unsubscribe link in the footer of any email you receive from us, or by contacting us at info@woosupplements.com.</label>
             </div>
             <button type="submit">Subscribe Now</button>
         </form>
     </div>
 
     <script>
+       document.addEventListener('DOMContentLoaded', function() {
+            // Retrieve consent status from local storage
+            const consent = localStorage.getItem('consent');
+            if (consent === 'true') {
+                document.querySelector('.overlay').style.display = 'none';
+                document.querySelector('.form-container').style.display = 'none';
+            } else {
+                document.querySelector('.overlay').style.display = 'block';
+                document.querySelector('.form-container').style.display = 'block';
+            }
+        });
+
         document.querySelector('.close-btn').addEventListener('click', function() {
+            // Hide the form and overlay when the close button is clicked
             document.querySelector('.form-container').style.display = 'none';
             document.querySelector('.overlay').style.display = 'none';
+            // Store consent status in local storage
+            localStorage.setItem('consent', 'true');
         });
 
         document.querySelector('form').addEventListener('submit', function(e) {
             e.preventDefault();
             alert('Thank you for subscribing!');
+            // Hide the form and overlay after form submission
             document.querySelector('.form-container').style.display = 'none';
             document.querySelector('.overlay').style.display = 'none';
+            // Store consent status in local storage
+            localStorage.setItem('consent', 'true');
         });
     </script>
 
