@@ -1,7 +1,100 @@
 
 <!DOCTYPE html>
 <html lang="en-US">
+	
     <head>
+  <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Matcha Extreme Newsletter Signup</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #F2F9F6;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            overflow: hidden;
+        }
+        .overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 1000;
+        }
+        .form-container {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: #fff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            z-index: 1100;
+            width: 90%;
+            max-width: 400px;
+        }
+        .form-container h2 {
+            color: #DEE54E;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        .form-container p {
+            font-size: 14px;
+            color: #666;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .form-container input[type="email"] {
+            width: calc(100% - 20px);
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #DEE54E;
+            border-radius: 5px;
+        }
+        .form-container input[type="checkbox"] {
+            margin-right: 10px;
+        }
+        .form-container button {
+            width: 100%;
+            padding: 10px;
+            background: #DEE54E;
+            border: none;
+            border-radius: 5px;
+            color: #fff;
+            font-size: 16px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+        .form-container button:hover {
+            background: #c8d947;
+        }
+        .close-btn {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: none;
+            border: none;
+            font-size: 20px;
+            cursor: pointer;
+            color: #666;
+        }
+    </style>
+
+
+	    
+
+
+
+
+
+	    
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
@@ -42,6 +135,57 @@
 	<![endif]-->
     </head>
     <body>
+
+
+
+
+<div class="overlay"></div>
+    <div class="form-container">
+        <button class="close-btn">&times;</button>
+        <h2>Subscribe to Our Newsletter</h2>
+        <p>Stay updated with the latest offers and health tips from Matcha Extreme.</p>
+        <form>
+            <input type="email" placeholder="Enter your email" required>
+            <div>
+                <input type="checkbox" id="marketing-consent" required>
+                <label for="marketing-consent">I agree to receive email marketing from Matcha Extreme.</label>
+            </div>
+            <button type="submit">Subscribe Now</button>
+        </form>
+    </div>
+
+    <script>
+        document.querySelector('.close-btn').addEventListener('click', function() {
+            document.querySelector('.form-container').style.display = 'none';
+            document.querySelector('.overlay').style.display = 'none';
+        });
+
+        document.querySelector('form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Thank you for subscribing!');
+            document.querySelector('.form-container').style.display = 'none';
+            document.querySelector('.overlay').style.display = 'none';
+        });
+    </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	    
 
         <div class="bg-top">
             <div class="container">
