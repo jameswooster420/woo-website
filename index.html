@@ -1422,6 +1422,33 @@ document.addEventListener("DOMContentLoaded", function() {
     });
 });
 </script>
+<script>
+$(document).ready(function() {
+    // Show the "Terms & Conditions" modal
+    $('a[data-target="#rule_popup"]').click(function(e) {
+        e.preventDefault();
+        $('#rule_popup').modal('show');
+    });
+
+    // Show the "Privacy Policy" modal
+    $('a[data-target="#privacy_popup"]').click(function(e) {
+        e.preventDefault();
+        $('#privacy_popup').modal('show');
+    });
+
+    // Show the "Contact" modal
+    $('a[data-target="#contact_popup"]').click(function(e) {
+        e.preventDefault();
+        $('#contact_popup').modal('show');
+    });
+
+    // Close modals when the close button is clicked
+    $('.close').click(function() {
+        $(this).closest('.modal').modal('hide');
+    });
+});
+</script>
+
 
 
     </body>
