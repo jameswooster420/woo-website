@@ -1421,6 +1421,24 @@ Matcha Extreme is a product focused on weight loss support. It is distinguished 
             localStorage.setItem('consent', 'true');
         });
     </script>
+	    <script>
+document.addEventListener("DOMContentLoaded", function() {
+    const faqTitles = document.querySelectorAll(".faq-title");
+    
+    faqTitles.forEach(title => {
+        title.addEventListener("click", function() {
+            const faqText = this.nextElementSibling;
+            
+            if (faqText.style.display === "block") {
+                faqText.style.display = "none";
+            } else {
+                faqText.style.display = "block";
+            }
+        });
+    });
+});
+</script>
+
 
     </body>
 </html>
